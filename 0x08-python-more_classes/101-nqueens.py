@@ -48,11 +48,11 @@ def recur_bt(matrix, row, col, n):
     if row:
         i = row
         for j in col:
-               if (not bot_right(matrix, i + 1, j + 1, n) or
-                    not bot_left(matrix, i + 1, j - 1, n) or
-                    not top_left(matrix, i - 1, j - 1, n) or
-                        not top_right(matrix, i - 1, j + 1, n)):
-                       continue
+            if (not bot_right(matrix, i + 1, j + 1, n) or
+                not bot_left(matrix, i + 1, j - 1, n) or
+                not top_left(matrix, i - 1, j - 1, n) or
+                    not top_right(matrix, i - 1, j + 1, n)):
+                continue
                 matrix.append([i, j])
                 new_col = list(col)
                 new_col.remove(j)
@@ -160,7 +160,7 @@ if __name__ == "__main__":
         exit(1)
     try:
         n = int(argv[1])
-    except:
+    except Exception:
         print("N must be a number")
         exit(1)
     if n < 4:
