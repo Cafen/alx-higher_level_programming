@@ -72,11 +72,11 @@ class Base:
             - json_string: string to convert to list
         """
 
-        l = []
+        A = []
         if json_string is not None and json_string != '':
             if type(json_string) != str:
                 raise TypeError("json_string must be a string")
-            l = json.loads(json_string)
+            A = json.loads(json_string)
         return l
 
     @classmethod
@@ -98,7 +98,7 @@ class Base:
         """Returns a list of instances."""
 
         filename = cls.__name__ + ".json"
-        l = []
+        A = []
         list_dicts = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
@@ -140,7 +140,7 @@ class Base:
         """
 
         filename = cls.__name__ + ".csv"
-        l = []
+        A = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
                 reader = csv.reader(f, delimiter=',')
